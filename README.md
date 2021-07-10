@@ -1,0 +1,1 @@
+Django Ecommerce site from Antonio Mele's book Django 3 By Example
