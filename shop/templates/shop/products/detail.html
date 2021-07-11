@@ -12,8 +12,8 @@
                 {{ product.category }}
             </a>
         </h2>
-        <p class="price">
+        <p class="price">${{ product.price }}</p>
+        {{ product.description|linebreaks }}
 
-        </p>
     </div>
 {% endblock %}
