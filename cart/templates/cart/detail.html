@@ -1,6 +1,6 @@
 {% extends 'shop/base.html' %}
 {% load static %}
-{% block title %}<h1>Your Shopping Cart</h1>{% endblock %}
+{% block title %}Your Shopping Cart{% endblock %}
 
 {% block content %}
     <h1>Your Shopping Cart</h1>
@@ -51,7 +51,10 @@
     </table>
 
     <p class="text-right">
-        <a href="{% url 'shop:product_list' %}" class="button light">
+        <a href="{% url 'shop:product_list' %}"
+           class="button light"
+           style="margin-right: 5px"
+        >
             Continue shopping
         </a>
         <a href="#" class="button">Checkout</a>
