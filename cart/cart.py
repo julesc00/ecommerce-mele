@@ -15,7 +15,7 @@ class Cart(object):
 
         if not cart:
             # save an empty cart in the session
-            cart = self.session[settings.CART_SESSION_ID] = dict
+            cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
 
     def __iter__(self):
@@ -70,7 +70,7 @@ class Cart(object):
             self.save()
 
     def get_total_price(self):
-        return sum(Decimal(item["price"] * item["quatity"] for item in self.cart.values()))
+        return sum(Decimal(item["price"]) * item["quantity"] for item in self.cart.values())
 
     def clear(self):
         """Remove cart from session."""
