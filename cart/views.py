@@ -28,7 +28,15 @@ def cart_detail(request):
     """List items in the cart."""
 
     cart = Cart(request)
+
+    for item in cart:
+        item["update_quantity_form"] = CartAddProductForm(initial={
+            "quantity": item["quantity"],
+            "override": True
+        })
+
     context = {"cart": cart}
+
     return render(request, "cart/detail.html", context)
 
 
