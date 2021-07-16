@@ -25,10 +25,10 @@ def order_create(request):
 
             return render(request, "orders/created.html", context)
 
-        else:
-            form = OrderCreateForm()
-        context = {
-            "cart": cart,
-            "form": form
-        }
-        return render(request, "orders/create.html", context)
+    else:
+        form = OrderCreateForm()
+    context = {
+        "cart": cart,
+        "form": form
+    }
+    return render(request, "orders/create.html", context)
